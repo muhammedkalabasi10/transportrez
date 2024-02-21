@@ -21,18 +21,15 @@ public class Publication {
     private String cargo_type;
     private float total_price;
     private Date transported_date;
-    private int user_id;
-    private int transporter_id;
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
-    private User user;
+    private User user_id;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "transporter_id")
-    private Transporter transporter;
+    private Transporter transporter_id;
 
-    public Publication(String from_addr, String to_addr, Date created_date, String cargo_type, float total_price, int user_id) {
+    public Publication(String from_addr, String to_addr, Date created_date, String cargo_type, float total_price, User user_id) {
         this.from_addr = from_addr;
         this.to_addr = to_addr;
         this.created_date = created_date;

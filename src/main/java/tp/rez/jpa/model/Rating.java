@@ -20,27 +20,22 @@ public class Rating {
     private short score;
 
     private String comment;
-
-    private int commenter_id;
-
-    private int commented_id;
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "commenter_id")
-    private User user;
+    private User commenter_id;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "commented_id")
-    private Transporter transporter;
+    private Transporter commented_id;
 
-    public Rating(int id, short score, int commenter_id, int commented_id) {
+    public Rating(int id, short score, User commenter_id, Transporter commented_id) {
         this.id = id;
         this.score = score;
         this.commenter_id = commenter_id;
         this.commented_id = commented_id;
     }
 
-    public Rating(short score, String comment, int commenter_id, int commented_id) {
+    public Rating(short score, String comment, User commenter_id, Transporter commented_id) {
         this.id = id;
         this.score = score;
         this.comment = comment;
