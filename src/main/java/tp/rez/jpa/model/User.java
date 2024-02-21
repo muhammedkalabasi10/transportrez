@@ -21,6 +21,7 @@ public class User {
     private String address;
     private String email;
     private boolean verification;
+    private String password;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "commenter_id", cascade = CascadeType.ALL)
     private List<Rating> ratingList;

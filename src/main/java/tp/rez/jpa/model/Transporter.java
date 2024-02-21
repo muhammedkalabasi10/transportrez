@@ -24,7 +24,7 @@ public class Transporter {
     private String car_details;
     private float unit_price;
     private boolean verification;
-
+    private String password;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "commented_id", cascade = CascadeType.ALL)
     private List<Rating> ratingList;
